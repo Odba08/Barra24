@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./styles/index.scss" />
+
+    <title>Barra 24</title>
+  </head>
+  <body>
+
+    <header>
+      <nav>
+        <div class="sidenav" id="mySidepanel">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+            >×</a
+          >
+
+          <div class="sidecontent">
+            <a href="#">Servicio</a>
+            <a href="#">Contacto</a>
+            <a href="#">EN/ES</a>
+          </div>
+        </div>
+        <div class="navbar">
+          <img src="./assets/img/logo-full.svg" alt="Logo" class="logo" />
+          <img
+            src="./assets/icons/bars-solid.svg"
+            alt="icon"
+            class="open"
+            onclick="openNav()"
+          />
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="left">
+        <main>
+          <section>
+            <div class="hero">
+              <div class="info">
+                <h1>La<span class="solution"> solución</span> es un clic.</h1>
+                <p class="text">
+                  Soluciones tecnológicas, tu empresa compite alto, y nuestros
+                  expertos confían en tus sueños.
+                </p>
+              </div>
+
+              <div class="contact">
+                <p class="text">
+                  Contacta con expertos, y agenda proyectos para optimizar el
+                  funcionamiento de los sistemas de tu empresa.
+                </p>
+              </div>
+
+              <div class="formulario">
+                <form action="" class="form">
+                  <input
+                    type="email"
+                    id="input"
+                    placeholder="Recibe un correo por parte de nosotros"
+                  />
+                  <button type="submit" id="button">Enviame un mail</button>
+                </form>
+              </div>
+
+              <div class="solutions">
+                <img src="./assets/icons/fingerprint-solid.svg" alt="Simbolo del servicio" id="dedo" >
+                <h4>Sistemas de control de acceso</h4>
+              </div>
+
+              <div class="actions">
+                <a href="" class="actionstext">Contacta con un asesor</a>
+                <a href=""class="actionstext">Conoce nuestros servicios</a>
+              </div>
+
+              <div class="socials">
+                <img src="" alt="" />
+
+               <!--  <div class="socials_links">
+                  <a href=""><img src="" alt="Icono de telefono" /></a>
+                  <a href=""><img src="" alt="Icono de email" /></a>
+                  <a href=""><img src="" alt="Icono de web" /></a>
+                  <a href=""><img src="" alt="Icono de contacto " /></a>
+                </div> -->
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+
+      <div class="right">
+        <div class="image">
+          
+          <div class="ringcontainer">
+
+         
+            <div class="ext-ring">
+              <div class="int-ring"></div>
+              <img src="./assets/img/photo.jpg" alt="" />
+              
+            </div>
+          </div>
+
+            <div class="image-rectangle">
+              <div class="ext-ring">
+                <div class="int-ring"></div>
+                <img src="./assets/img/photo.jpg" alt="" />
+                
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      
+    </div>
+
+    
+
+    <script>
+      function openNav() {
+        document.getElementById("mySidepanel").style.width = "150px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidepanel").style.width = "0";
+      }
+    </script>
+  </body>
+</html>
