@@ -90,7 +90,7 @@
   }
   
   header {
-  position: sticky;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,21 +99,55 @@
   
   nav {
 
+    width: 100%;
+      display: flex;
+      z-index: 2;
+        #mySidepanel{
+         position: fixed;
+          display: flex;
+          align-items: center;
+          justify-content: right;
+        width: 100%;
+        z-index: 2;
+          .sidecontent {
+            display: flex;
+            width:45%;
+            justify-content: space-between;
+            a{
+              font-size: 3rem;
+              margin-right:3%;
+              color: var(--color-tech); 
+              
+            }
+            
+          
+          }
 
-      #mySidepanel{
-        display: none;
-      
-      }
+          .closebtn{
+            display: none;
+          }
 
-      .open{
-        display: none;
-      }
-  }
-  
-  nav img {
-    width: 240px;
-  }
-  
+          #idioma{ 
+            /* margin-left: -10%; */
+            color: var(--color-cream);
+          }
+          #servicio{
+            color: var(--color-cream);
+          }
+        }
+
+       
+
+        .open{
+          display: none;
+        }
+    }
+    
+
+    nav img {
+      width: 480px;
+      margin: 5% 0 0 10%;
+    }
   nav .nav_links {
     width: 30%;
     display: flex;
@@ -399,28 +433,66 @@
     }
     
     header {
-    position: sticky;
+    position: relative;
+
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     width: 100%;
     }
     
     nav {
-  
-
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      z-index: 2;
         #mySidepanel{
-          display: none;
-        
+         
+          display: flex;
+          align-items: center;
+          justify-content: right;
+        width: 100%;
+        z-index: 2;
+          .sidecontent {
+            display: flex;
+            width: 37%;
+            justify-content: space-between;
+            a{
+              
+              margin:4%;
+
+              color: var(--color-tech); 
+              
+            }
+            
+          
+          }
+
+          .closebtn{
+            display: none;
+          }
+
+          #idioma{ 
+            /* margin-left: -10%; */
+            color: var(--color-cream);
+          }
+          #servicio{
+            color: var(--color-cream);
+          }
         }
+
+       
 
         .open{
           display: none;
         }
     }
     
+
     nav img {
       width: 240px;
+      margin: 5% 0 0 10%;
     }
     
     nav .nav_links {
