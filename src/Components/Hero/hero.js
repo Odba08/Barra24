@@ -1,15 +1,43 @@
 import "./hero.scss";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import photo from "../../Assets/img/photo.jpg";
 import logo from "../../Assets/img/logo-full.svg";
 import finger from "../../Assets/icons/fingerprint-solid.svg";
 import bars from "../../Assets/icons/bars-solid.svg";
+import emailjs from '@emailjs/browser';
+import App from "../slider/App";
+
 
 
 function Hero() {
     
 const [sidePanelOpen, setSidePanelOpen] = useState(false);
+const form = useRef();
+const [message, setMessage] = useState('');
+
+const sendEmail = (e) => {
+
+  e.preventDefault();
+
+  const serviceId = 'service_h0xb9ua';
+  const templateId = 'template_bukdjk6';
+  const publicKey = 'XRmSLdGaZmvIiOkOI';
+
+  const templateParams = {
+    message: message,
+  };
+  
+  emailjs.send(serviceId, templateId, templateParams, publicKey)
+    .then((response) => {
+      console.log('Mensaje enviado correctamente!', response);
+      setMessage('');
+    }, (error) => {
+      console.log(error.text);
+    });
+ 
+  }
+
 
   return (
     <div className="hero">
@@ -77,11 +105,13 @@ const [sidePanelOpen, setSidePanelOpen] = useState(false);
                 </div>
 
                 <div class="formulario">
-                  <form action="" class="form">
+                  <form action="" ref={form} class="form" onSubmit={sendEmail}>
                     <input
                       type="email"
                       id="input"
                       placeholder="Recibe un correo por parte de nosotros"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
                     />
                     <button type="submit" id="button">
                       Enviame un mail
@@ -90,8 +120,10 @@ const [sidePanelOpen, setSidePanelOpen] = useState(false);
                 </div>
 
                 <div class="solutions">
-                  <img src={finger} alt="Simbolo del servicio" id="dedo" />
-                  <h4>Sistemas de control de acceso</h4>
+                  {/* <img src={finger} alt="Simbolo del servicio" id="dedo" />
+                  <h4>Sistemas de control de acceso</h4> */}
+
+                  <App />
                 </div>
 
                 <div class="actions">
@@ -135,7 +167,9 @@ const [sidePanelOpen, setSidePanelOpen] = useState(false);
           </div>
         </div>
       </div>
+
     </div>
+
   );
 }
 

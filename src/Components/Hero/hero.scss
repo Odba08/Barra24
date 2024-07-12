@@ -197,10 +197,16 @@
     }
     .solution{
       color: var(--color-fruit);
+      
     }
     .hero {
-      width: 60%;
+      width: 45%;
       margin-top: 0.5rem;
+
+      @media (max-width: 1270px) {
+        width: 30%;
+        
+      }
     }
     .info{
       font-size: 25px;
@@ -232,7 +238,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        @media (min-width: 869px) and (max-width: 885px) {
+        @media (min-width: 869px) and (max-width: 1200px) {
           flex-direction: column;
         }
         #input{
@@ -247,7 +253,7 @@
             width: 250px;
             font-size: 13px;
           }
-          @media (min-width: 869px) and (max-width: 885px) {
+          @media (min-width: 869px) and (max-width: 1250px) {
             margin-bottom: 15px;
           }
           @media (min-width: 1400px)  {

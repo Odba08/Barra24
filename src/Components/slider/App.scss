@@ -1,0 +1,32 @@
+// src/App.scss
+.carousel-container {
+    text-align: center;
+   
+  }
+  
+  .carousel {
+    display: flex;
+    overflow: hidden;
+    width: 30%;
+    position: relative;
+  }
+  
+  .carousel img {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .carousel img.active {
+    opacity: 1;
+    position: relative;
+    transform: translateX(0);
+  }
+  
+  .carousel img:not(.active) {
+    transform: translateX(100%);
+  }
+  
