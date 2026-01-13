@@ -1,32 +1,33 @@
-// src/App.scss
 .carousel-container {
-    text-align: center;
-   
-  }
-  
-  .carousel {
-    display: flex;
-    overflow: hidden;
-    width: 30%;
-    position: relative;
-  }
-  
-  .carousel img {
-    min-width: 100%;
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  
-  .carousel img.active {
-    opacity: 1;
-    position: relative;
-    transform: translateX(0);
-  }
-  
-  .carousel img:not(.active) {
-    transform: translateX(100%);
-  }
-  
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel {
+  display: flex;
+  position: relative;
+  width: 100%; /* Ocupa el espacio que le de el padre (.solutions) */
+  height: auto;
+  overflow: hidden;
+  border-radius: 10px; /* Opcional: estética */
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: contain; /* Asegura que la imagen se vea completa */
+}
+
+.carousel img.active {
+  opacity: 1;
+  position: relative; /* Mantiene la altura del contenedor */
+  z-index: 1;
+}
